@@ -103,35 +103,35 @@ struct Node* merge2LL(struct Node* list1,struct Node* list2)
  * };
  */
 
-struct ListNode* mergeTwoLists(struct ListNode* list1, struct ListNode* list2) {
-    // Create a dummy node to simplify the edge cases.
-    struct ListNode* dummy = (struct ListNode*)malloc(sizeof(struct ListNode));
-    struct ListNode* current = dummy;  // Pointer to track the current node in the merged list.
+// struct ListNode* mergeTwoLists(struct ListNode* list1, struct ListNode* list2) {
+//     // Create a dummy node to simplify the edge cases.
+//     struct ListNode* dummy = (struct ListNode*)malloc(sizeof(struct ListNode));
+//     struct ListNode* current = dummy;  // Pointer to track the current node in the merged list.
 
-    // Traverse both lists until one of them is empty.
-    while (list1 != NULL && list2 != NULL) {
-        if (list1->val <= list2->val) {
-            current->next = list1;
-            list1 = list1->next;
-        } else {
-            current->next = list2;
-            list2 = list2->next;
-        }
-        current = current->next;
-    }
+//     // Traverse both lists until one of them is empty.
+//     while (list1 != NULL && list2 != NULL) {
+//         if (list1->val <= list2->val) {
+//             current->next = list1;
+//             list1 = list1->next;
+//         } else {
+//             current->next = list2;
+//             list2 = list2->next;
+//         }
+//         current = current->next;
+//     }
 
-    // Append the remaining elements from either list1 or list2.
-    if (list1 != NULL) {
-        current->next = list1;
-    } else {
-        current->next = list2;
-    }
+//     // Append the remaining elements from either list1 or list2.
+//     if (list1 != NULL) {
+//         current->next = list1;
+//     } else {
+//         current->next = list2;
+//     }
 
-    // The merged list starts at dummy->next (skipping the dummy node).
-    struct ListNode* head = dummy->next;
+//     // The merged list starts at dummy->next (skipping the dummy node).
+//     struct ListNode* head = dummy->next;
 
-    // Free the dummy node, as it's no longer needed.
-    free(dummy);
+//     // Free the dummy node, as it's no longer needed.
+//     free(dummy);
 
-    return head;
-}
+//     return head;
+// }
